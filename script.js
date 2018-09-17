@@ -2,43 +2,39 @@
 
 // OPTION ARRAY
 
-var levelOneShapes = ['circle', 'square', 'triangle'];
+var levelOneShapes = ['circle', 'triangle', 'square'];
 
-var levelOnePlayed = [];
+var lastPlayed;
+
+// RESULT MESSAGE
+
+var result = document.getElementById("result");
 
 // MATCH BOARD
 
 var optionMatch = document.getElementById('itemToMatch');
 
-optionMatch.innerHTML = levelOneShapes[0];
-
 // OPTION BOARD
 
-var optionOne = document.getElementById('1');
+var optionOne = document.getElementById('0');
 
-optionOne.innerHTML = levelOneShapes[0];
+var optionTwo = document.getElementById('1');
 
-var optionOne = document.getElementById('2');
+var optionThree = document.getElementById('2');
 
-optionOne.innerHTML = levelOneShapes[1];
+var levelOneCorrect = 0;
 
-var optionOne = document.getElementById('3');
+// OPTION EVENTS
 
-optionOne.innerHTML = levelOneShapes[2];
+var optionButtons = document.getElementsByClassName("optionButton");
 
-var levelOneCorrect = 1;
+for (var i=0; i < optionButtons.length; i++) {
 
-// CLICK EVENT
-
-var buttons = document.getElementsByClassName("optionButton");
-
-for (var i=0; i < buttons.length; i++) {
-
-    buttons[i].addEventListener('click',myClickEvent);
+    optionButtons[i].addEventListener('click',myClickEvent);
 
 };
 
-// GAME
+// RESULT
 
 function myClickEvent(event) {
 
@@ -46,13 +42,15 @@ function myClickEvent(event) {
 
     var clickedButton = parseInt(event.target.id);
 
-    var result = document.getElementById("result");
-
     if (levelOneCorrect === clickedButton) {
 
         result.innerHTML = "Yes!";
 
-        levelOnePlayed.push('circle');
+        nextButton.removeAttribute('id');
+
+        lastPlayed = levelOneShapes[clickedButton];
+
+        console.log('print lastPlayed: ' + lastPlayed);
 
         return true;
 
@@ -60,9 +58,38 @@ function myClickEvent(event) {
 
         result.innerHTML = "No!";
 
-        return false;
-
     }
 };
 
-// LEVEL TWO
+// NEXT LEVEL
+
+var nextButton = document.getElementById("nextLevel");
+
+nextButton.addEventListener('click',myNextEvent);
+
+function myNextEvent() {
+
+    console.log('nextevent');
+
+    result.innerHTML = "Match the Shape";
+
+    nextButton.setAttribute('id', 'nextLevel');
+
+    if (lastPlayed === 'circle'){
+
+    optionMatch.setAttribute('src', './images/triangle.png');
+
+    levelOneCorrect = 1;
+
+    } else if (lastPlayed === 'triangle'){
+
+    optionMatch.setAttribute('src', './images/square.png');
+
+    levelOneCorrect = 2;
+
+    } else {
+        alert("Yay you're baby is a genius!");
+    }
+
+};
+
