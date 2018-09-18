@@ -24,7 +24,7 @@ b {
 }
 
 #nextLevel{
-	display: none;
+	visibility: hidden;
 }
 
 .nextButton {

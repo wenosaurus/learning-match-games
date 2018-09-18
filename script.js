@@ -4,6 +4,10 @@
 
 var levelOneShapes = ['circle', 'triangle', 'square'];
 
+var levelTwoShapes = ['heart', 'diamond', 'cresent'];
+
+var currentArray = levelOneShapes;
+
 var lastPlayed;
 
 // RESULT MESSAGE
@@ -48,7 +52,10 @@ function myClickEvent(event) {
 
         nextButton.removeAttribute('id');
 
-        lastPlayed = levelOneShapes[clickedButton];
+        play();
+        //lastPlayed = levelOneShapes[clickedButton];
+
+        lastPlayed = currentArray[clickedButton];
 
         console.log('print lastPlayed: ' + lastPlayed);
 
@@ -88,8 +95,21 @@ function myNextEvent() {
     levelOneCorrect = 2;
 
     } else {
-        alert("Yay you're baby is a genius!");
+        alert("Yay your baby is a genius! Level 2 is coming");
+
+        currentArray = levelTwoShapes;
+
+        console.log(levelTwoShapes);
     }
 
 };
 
+// PLAY AUDIO
+
+function play(){
+
+    var audio = document.getElementById("audio");
+
+    audio.play();
+
+                 }
