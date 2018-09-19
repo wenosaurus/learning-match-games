@@ -54,6 +54,14 @@ b {
 	display: none;
 }
 
+#beginnerButtonGone{
+	display: none;
+}
+
+#advancedButtonGone{
+	display: none;
+}
+
 .nextButton {
 	  background-color: orange;
     border: none;
