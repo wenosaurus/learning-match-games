@@ -9,21 +9,29 @@
     <div align="center">
         <table id="gameBoard">
             <tr><td colspan="2">
-                <header>
-        <h1>Learning Game</h1>
-    </header>
-    <p>
+            <h1>Learning Game</h1>
+            <p>
         <b>Instructions:</b> Teach your baby different shapes and sizes with this interactive matching game. Play along with your baby and learn together. All you have to do is match the shapes.
-    </p>
+    </p><br/>
 </td></tr>
             <tr align="center">
-                <td id="matchBoard">
+                <td id="matchBoard" valign="top">
+                    <table width=100% height=100%>
+                        <tr align="center" valign="top"><td>
                     <h2 id="result">Match the Shape</h2>
                     <audio id="audio" src="./media/clap.mp3"></audio>
+                </td></tr>
+                    <tr align="center" valign="top"><td>
                     <img src="./images/circle.png" id="itemToMatch"><br/><br/>
+                </td></tr>
+                    <tr align="center" valign="top"><td>
                     <button class="nextButton" id="nextLevel">Next</button>
+                    <button class="nextButton" id="nextLevelTwo">Next 2</button>
+                </td></tr>
+                </table>
                 </td>
-                <td id="optionBoard">
+                <td id="optionBoard" valign="top" align="center">
+                    <h3>Choose</h3>
                     <img src="./images/circle.png" class="optionButton" id="0"><br/><br/>
                     <img src="./images/triangle.png" class="optionButton" id="1"><br/><br/>
                     <img src="./images/square.png" class="optionButton" id="2">
