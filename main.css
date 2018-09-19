@@ -31,6 +31,10 @@ b {
 	display: none;
 }
 
+#nextLevelThree{
+	display: none;
+}
+
 .nextButton {
 	  background-color: orange;
     border: none;

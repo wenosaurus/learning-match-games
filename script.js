@@ -69,7 +69,7 @@ function myNextEvent() {
     levelOneCorrect = 2;
 
     } else {
-        alert("Yay your baby is a genius! Level 2 is coming");
+        alert("Level 2");
 
         levelOneCorrect = 0;
 
@@ -106,7 +106,7 @@ function myNextEventTwo() {
 
     result.innerHTML = "Match the Shape";
 
-    nextButtonTwo.setAttribute('id', 'nextLevelTwo');
+    currentButton.setAttribute('id', 'nextLevelTwo');
 
     if (lastPlayed === 'heart'){
 
@@ -121,7 +121,7 @@ function myNextEventTwo() {
     levelOneCorrect = 2;
 
     } else {
-        alert("Yay your baby is a genius! Level 3 is coming");
+        alert("Level 3");
 
         levelOneCorrect = 0;
 
@@ -142,6 +142,44 @@ function myNextEventTwo() {
         console.log(nextButtonTwo);
 
         console.log(lastPlayed);
+    }
+
+};
+
+// NEXT LEVEL 3
+
+var nextButtonThree = document.getElementById("nextLevelThree");
+
+nextButtonThree.addEventListener('click',myNextEventThree);
+
+function myNextEventThree() {
+
+    console.log('next event Three');
+
+    result.innerHTML = "Match the Shape";
+
+    currentButton.setAttribute('id', 'nextLevelThree');
+
+    if (lastPlayed === 'crescent'){
+
+    optionMatch.setAttribute('src', './images/pentagon.png');
+
+    levelOneCorrect = 1;
+
+    } else if (lastPlayed === 'pentagon'){
+
+    optionMatch.setAttribute('src', './images/octagon.png');
+
+    levelOneCorrect = 2;
+
+    } else {
+        alert("Yay your baby is a genius!");
+
+        levelOneCorrect = 0;
+
+        currentArray = levelThreeShapes;
+
+        currentButton = nextButtonThree;
     }
 
 };
