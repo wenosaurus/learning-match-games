@@ -47,6 +47,10 @@ b {
   	vertical-align: bottom;
  }
 
+.nextButton:hover {
+	background-color: gray;
+}
+
 .optionButton {
  	width: 120px;
  }
