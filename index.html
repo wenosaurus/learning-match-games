@@ -7,7 +7,7 @@
 </head>
 <body>
     <div align="center">
-        <table id="gameBoard">
+        <table id="mainTable">
             <tr><td colspan="2">
                 <header>
             <h1>Learning Game</h1>
@@ -22,8 +22,8 @@
     </p></nav>
 </td></tr>
             <tr align="center">
-                <td id="matchBoard" valign="top">
-                    <table width=100% height=100%>
+                <td id="matchBoard" valign="top" align="center">
+                    <table id="gameBoardMatch">
                         <tr align="center" valign="top"><td>
                     <h2 id="result">Match the Shape</h2>
                     <audio id="audio" src="./media/clap.mp3"></audio>
@@ -39,10 +39,16 @@
                 </table>
                 </td>
                 <td id="optionBoard" valign="top" align="center">
-                    <h3>Choose</h3>
-                    <img src="./images/circle.png" class="optionButton" id="0"><br/><br/>
-                    <img src="./images/triangle.png" class="optionButton" id="1"><br/><br/>
-                    <img src="./images/square.png" class="optionButton" id="2">
+                    <table id="gameBoardOption">
+                    <tr><td align="center" valign="top">
+                        <h3>Choose</h3>
+                    </td></tr>
+                        <tr><td align="center" valign="top">
+                    <img src="./images/circle.png" class="optionButton" id="0"></td></tr>
+                    <tr><td align="center" valign="top">
+                    <img src="./images/triangle.png" class="optionButton" id="1"></td></tr>
+                    <tr><td><img src="./images/square.png" class="optionButton" id="2"></td></tr>
+                </table>
                 </td>
             </tr>
         </table>

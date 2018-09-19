@@ -20,6 +20,10 @@ var result = document.getElementById("result");
 
 var optionMatch = document.getElementById('itemToMatch');
 
+var gameBoardMatch = document.getElementById('gameBoardMatch');
+
+var gameBoardOption = document.getElementById('gameBoardOption');
+
 // OPTION BOARD
 
 var optionOne = document.getElementById('0');
@@ -29,6 +33,22 @@ var optionTwo = document.getElementById('1');
 var optionThree = document.getElementById('2');
 
 var levelOneCorrect = 0;
+
+// START CHOOSE LEVEL - BEGINNER
+
+var beginnerButton = document.getElementById("beginngerButton");
+
+beginngerButton.addEventListener('click',myLevelBeginner);
+
+function myLevelBeginner() {
+
+    console.log('my Level Beginner');
+
+    gameBoardMatch.removeAttribute('id');
+
+    gameBoardOption.removeAttribute('id');
+
+};
 
 // OPTION EVENTS
 
