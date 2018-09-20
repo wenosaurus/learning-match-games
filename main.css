@@ -62,6 +62,10 @@ b {
 	display: none;
 }
 
+#winButton{
+	display: none;
+}
+
 .nextButton {
 	  background-color: orange;
     border: none;
@@ -80,6 +84,11 @@ b {
 
 .optionButton {
  	width: 120px;
+ }
+
+ #winMessage{
+ 	font-size: 30px;
+ 	color: green;
  }
 
 /*.hidden{

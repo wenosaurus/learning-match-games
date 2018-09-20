@@ -11,6 +11,7 @@ var correctAnswer = 0;
 
 var result = document.getElementById("result");
 var win = document.getElementById("winMessage");
+var winButton = document.getElementById("winButton");
 
 // AGE GROUP
 
@@ -59,13 +60,6 @@ function myLevelAdvance() {
     age.innerHTML = "Age 2-4";
 };
 
-// OPTION EVENTS
-
-var optionButtons = document.getElementsByClassName("optionButton");
-for (var i=0; i < optionButtons.length; i++) {
-    optionButtons[i].addEventListener('click',myClickEvent);
-};
-
 // NEXT LEVEL
 
 var nextButton = document.getElementById("nextLevel");
@@ -111,7 +105,6 @@ function myNextEventTwo() {
         correctAnswer = 0;
         currentArray = levelThreeShapes;
         currentButton = nextButtonThree;
-        console.log(lastPlayed);
         optionMatch.setAttribute('src', './images/crescent.png');
         optionOne.setAttribute('src', './images/crescent.png');
         optionTwo.setAttribute('src', './images/pentagon.png');
@@ -137,11 +130,17 @@ function myNextEventThree() {
         correctAnswer = 0;
         gameBoardMatch.setAttribute('id', 'gameBoardMatch');
         gameBoardOption.setAttribute('id', 'gameBoardOption');
-        win.innerHTML = "You Won! Refresh to play again!";
+        win.innerHTML = "You Won!";
+        winButton.removeAttribute('id');
     }
 };
 
 // RESULT
+
+var optionButtons = document.getElementsByClassName("optionButton");
+for (var i=0; i < optionButtons.length; i++) {
+    optionButtons[i].addEventListener('click',myClickEvent);
+};
 
 function myClickEvent(event) {
     var clickedButton = parseInt(event.target.id);
@@ -161,3 +160,9 @@ function play(){
     var audio = document.getElementById("audio");
     audio.play();
 };
+
+// REFRESH
+
+function myFunction() {
+    location.reload();
+}
